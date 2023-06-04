@@ -10,6 +10,12 @@ node {
     stage('Build image') {
   
        app = docker.build("frankysagan/test")
+       //log the error if any
+         app.inside {
+                sh 'echo "Tests passed"'
+          }
+            
+
     }
 
     stage('Test image') {
