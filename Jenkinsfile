@@ -11,7 +11,7 @@ pipeline {
         stage('Build image') {
             steps {
                 script {
-                    app = docker.build("frankysagan/test")
+                    app = docker.build("frankysagan/kubernetes")
                     app.inside {
                         sh 'echo "Tests passed"'
                     }
